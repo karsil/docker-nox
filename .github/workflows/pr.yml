@@ -11,8 +11,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build the tagged Docker image
-        run: docker build . --file Dockerfile --tag nox:${{steps.vars.outputs.tag}}
+      - name: Build the Docker image
+        run: docker build . --tag nox:test --file Dockerfile
         
       - name: Run docker image with python tests
-        run: docker run -v ${{ inputs.path }}:/src nox:${{steps.vars.outputs.tag}} nox -f src/noxfile.py
+        run: docker run --rm -v ${{ inputs.path }}:/src nox:test nox -f src/noxfile.py
