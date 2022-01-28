@@ -1,0 +1,18 @@
+name: pr
+
+on:
+  pull_request:
+
+jobs:
+  test-image:
+    name: Build and test image
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build the tagged Docker image
+        run: docker build . --file Dockerfile --tag nox:${{steps.vars.outputs.tag}}
+        
+      - name: Run docker image with python tests
+        docker run -v ${{ inputs.path }}:/src nox:${{steps.vars.outputs.tag}} nox -f src/noxfile.py
