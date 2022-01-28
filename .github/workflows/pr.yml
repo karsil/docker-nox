@@ -16,6 +16,15 @@ jobs:
 
       - name: List content
         run: ls -a
+      
+      - name: pwd
+        run: pwd
+
+      - name: list root
+        run: ls /
+
+      - name: list /src
+        run: ls /src
         
       - name: Run docker image with python tests
         run: docker run --rm -v ${pwd}:/src nox:test nox -f noxfile.py
