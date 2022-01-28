@@ -1,11 +1,8 @@
 name: ci
 
 on:
-  push:
-    branches:
-      - 'master'
-    tags:
-      - 'v*'
+  schedule:
+    - cron: '0 12 1 * *'
 
 jobs:
   build-image:
