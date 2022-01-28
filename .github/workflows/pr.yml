@@ -15,4 +15,4 @@ jobs:
         run: docker build . --file Dockerfile --tag nox:${{steps.vars.outputs.tag}}
         
       - name: Run docker image with python tests
-        docker run -v ${{ inputs.path }}:/src nox:${{steps.vars.outputs.tag}} nox -f src/noxfile.py
+        run: docker run -v ${{ inputs.path }}:/src nox:${{steps.vars.outputs.tag}} nox -f src/noxfile.py
