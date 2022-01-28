@@ -15,4 +15,4 @@ jobs:
         run: docker build . --tag nox:test --file Dockerfile
       
       - name: Run docker image with python tests
-        run: docker run --rm -it -v ${{ github.workspace }}:/src testnox nox -f src/noxfile.py
+        run: docker run --rm -it -v ${{ GITHUB_WORKSPACE }}:/src testnox nox -f src/noxfile.py
