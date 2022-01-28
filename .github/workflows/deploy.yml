@@ -1,4 +1,4 @@
-name: ci
+name: Deploy
 
 on:
   schedule:
@@ -29,5 +29,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/nox:latest
           labels: ${{ steps.meta.outputs.labels }}
