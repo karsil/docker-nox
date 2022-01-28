@@ -13,11 +13,6 @@ jobs:
 
       - name: Build the Docker image
         run: docker build . --tag nox:test --file Dockerfile
-        
+      
       - name: Run docker image with python tests
-        uses: addnab/docker-run-action@v3
-        with:
-          image: testnox
-          options: --rm -it -v ${{ github.workspace }}:/src
-          run: nox -f src/noxfile.py
-        # run: docker run --rm -it -v ./:/src testnox nox -f src/noxfile.py
+        run: docker run --rm -it -v ${{ github.workspace }}:/src testnox nox -f src/noxfile.py
