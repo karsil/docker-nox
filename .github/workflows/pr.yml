@@ -18,4 +18,4 @@ jobs:
         run: ls ${{ github.workspace }}
       
       - name: Run docker image with python tests
-        run: docker run --rm -it -v ${{ github.workspace }}:/src testnox nox -f src/noxfile.py
+        run: docker run --rm -v ${{ github.workspace }}:/src testnox nox -f src/noxfile.py
