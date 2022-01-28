@@ -1,6 +1,9 @@
-*.*
+*
+!*/
 
 !.gitignore
+!.github/workflows/*.yml
+
 !README.md
 !Dockerfile
 
