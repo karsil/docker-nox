@@ -20,11 +20,6 @@ jobs:
       - name: pwd
         run: pwd
 
-      - name: list root
-        run: ls /
-
-      - name: list /src
-        run: ls /src
         
       - name: Run docker image with python tests
-        run: docker run --rm -v ${pwd}:/src nox:test nox -f noxfile.py
+        run: docker run --rm nox:test nox -f noxfile.py
