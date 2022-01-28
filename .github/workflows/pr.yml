@@ -13,13 +13,6 @@ jobs:
 
       - name: Build the Docker image
         run: docker build . --tag nox:test --file Dockerfile
-
-      - name: List content
-        run: ls -a
-      
-      - name: pwd
-        run: pwd
-
         
       - name: Run docker image with python tests
-        run: docker run --rm nox:test nox -f noxfile.py
+        run: docker run --rm -it -v $(pwd):/src testnox nox -f src/noxfile.py
