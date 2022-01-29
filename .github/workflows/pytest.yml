@@ -1,7 +1,11 @@
-name: Pull Request
+name: Test image on Python code
 
 on:
   pull_request:
+
+  push:
+    branches:
+      - "master"
 
 jobs:
   test-image:
