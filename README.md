@@ -7,5 +7,5 @@ It currently supports Python 3.5-3.10.
 
 ## Test locally
 ```bash
-docker run --rm -it -v $(pwd):/source karsil/nox:master nox -f source/noxfile.py
+docker run --rm -it -v $(pwd):/source karsil/nox:latest nox -f source/noxfile.py
 ```
