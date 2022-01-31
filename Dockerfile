@@ -1,6 +1,8 @@
 FROM ubuntu:20.04
 
-RUN apt install software-properties-common -y && \
+# Requiered to run 'update' to get ' software-properties-common'
+RUN apt-get update -qy && \
+        apt install software-properties-common -y && \
         add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get install -qy \
         python3.5 \
