@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-# Requiered to run 'update' to get ' software-properties-common'
+# Required to run 'update' to get ' software-properties-common'
 RUN apt-get update -qy && \
         apt install software-properties-common -y && \
         add-apt-repository ppa:deadsnakes/ppa
