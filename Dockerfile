@@ -1,8 +1,9 @@
 FROM ubuntu:20.04
 
-RUN apt-get update -qy
-RUN apt install software-properties-common -y
-RUN add-apt-repository ppa:deadsnakes/ppa
+# Required to run 'update' to get ' software-properties-common'
+RUN apt-get update -qy && \
+        apt install software-properties-common -y && \
+        add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get install -qy \
         python3.5 \
         python3.5-dev \
@@ -20,4 +21,5 @@ RUN apt-get install -qy \
         python3.10-distutils \
         python3-pip
 
-RUN python3 -m pip install 'nox==2022.1.7'
+RUN apt-get clean && \
+        python3 -m pip install 'nox==2022.1.7'
