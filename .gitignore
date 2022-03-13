@@ -9,3 +9,4 @@
 
 !tests/**/*.py
 !noxfile.py
+!requirements.txt

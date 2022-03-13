@@ -21,5 +21,7 @@ RUN apt-get install -qy \
         python3.10-distutils \
         python3-pip
 
+COPY requirements.txt .
+
 RUN apt-get clean && \
-        python3 -m pip install 'nox==2022.1.7'
+        python3 -m pip install -r requirements.txt
