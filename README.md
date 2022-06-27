@@ -19,10 +19,10 @@ stages:
 unittests:
   stage: test
   script:
-  - nox # expects noxfile.py at repository root
+  - nox -f source/tests/noxfile.py
 ```
 
 ## Run locally
 ```bash
-docker run --rm -it -v $(pwd):/source karsil/nox:latest nox -f source/noxfile.py
+docker run --rm -it -v $(pwd):/source karsil/nox:latest nox -f source/tests/noxfile.py
 ```
